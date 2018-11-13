@@ -15,7 +15,17 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('users/index', [
+$router->get('/users/index', [
     'as' => 'users.index', 
     'uses' => 'UsersController@index'
+]);
+
+$router->get('/users/create', [
+    'as' => 'users.create', 
+    'uses' => 'UsersController@create'
+]);
+
+$router->post('/users/store', [
+    'as' => 'users.store', 
+    'uses' => 'UsersController@store'
 ]);
